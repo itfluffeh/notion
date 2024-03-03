@@ -1,0 +1,13 @@
+<includeonly>{{#vardefine:villager|{{{npc|{{ROOTPAGENAME}}}}}}}{{#vardefine:i1|{{trim|{{{1|}}}}}}}{{#vardefine:i2|{{trim|{{{2|}}}}}}}{{#vardefine:i3|{{trim|{{{3|}}}}}}}{{#vardefine:i4|{{trim|{{{4|}}}}}}}{{#vardefine:edit|{{If/NPC|{{#var:villager}}|{{fullurl:{{#var:villager}}/Weekly_Wants|action=edit}}}}}}{| class="paliatable" cellspacing="5"
+{{#loop: i
+ | 1 <!-- Start at item 1 -->
+ | 4 <!-- 4 items total -->
+ | <nowiki />
+{{#ifeq: {{#expr: {{#var:i}}mod2}}|1|
+{{!}}-
+}}
+{{!}}style="vertical-align:top"{{!}}{{ItemBox|{{#vardefineecho:item|{{#var:i{{#var:i}}|ChapaaCurious}}}}|link={{#ifeq:{{#var:item}}|ChapaaCurious|{{#var:edit}}|{{#var:item}}}}|caption={{#ifeq:{{#var:item}}|ChapaaCurious|{{#if:{{#var:edit}}|[{{#var:edit}} Edit Entry]|'''Unknown'''}}|[[{{#var:item}}]]}}}}
+}}
+|}{{If/NPC|{{#var:villager}}|
+<small><translate><!--T:1--> Reset every <tvar name=1>{{WeeklyReset}}</tvar>.</translate><br/><translate><!--T:2--> '''Last updated <tvar name=1>{{Date|{{REVISIONTIMESTAMP:{{#var:villager}}/Weekly_Wants}}}}</tvar>.'''</translate> [{{#var:edit}} <translate><!--T:3--> Click here to edit</translate>].</small><br/>
+}}</includeonly><noinclude>{{Documentation}}</noinclude>
